@@ -1,12 +1,15 @@
 import React from "react";
+import { MdEmail } from "react-icons/md";
+import { FaPhoneAlt } from "react-icons/fa";
+import { RiLockPasswordFill } from "react-icons/ri";
 
 function SignupForm() {
   return (
     <div className="flex flex-col gap-4 items-center ">
-      <h1 className="text-3xl font-semibold">Sign up</h1>
-      <form method="post" className="flex flex-col gap-3 w-[20%]">
-        <div className="bg-[#f0f0f0] flex items-center py-2.5 rounded hover:bg-[#e7e7e7] ease-in-out max-w-[360px]:">
-          <i className="fas fa-user pl-5 " htmlFor="fname"></i>
+      <h1 className="text-4xl font-bold">Sign up</h1>
+      <form method="post" className="flex flex-col gap-3 w-full max-w-[310px]  ">
+        <div className="bg-[#f0f0f0] flex items-center py-2.5 rounded hover:bg-[#e7e7e7] ease-in-out ">
+          <i className="fas fa-user pl-5" htmlFor="fname"></i>
           <input
             type="text"
             className="bg-inherit ml-4 grow w-[0] outline-[0] "
@@ -22,7 +25,7 @@ function SignupForm() {
           />
         </div>
         <div className="bg-[#f0f0f0] flex items-center py-2.5 rounded hover:bg-[#e7e7e7]  ease-in-out">
-          <i className="fas fa-user pl-5 " htmlFor="fname"></i>
+          <i className="pl-5"><MdEmail /></i>
           <input
             type="email"
             className="bg-inherit ml-4 grow w-[0] outline-[0]"
@@ -30,15 +33,15 @@ function SignupForm() {
           />
         </div>
         <div className="bg-[#f0f0f0] flex items-center py-2.5 rounded hover:bg-[#e7e7e7]  ease-in-out">
-          <i className="fas fa-user pl-5 " htmlFor="fname"></i>
+          <i className="pl-5 " htmlFor="fname"><FaPhoneAlt /></i>
           <input
             type="phone"
             className="bg-inherit ml-4 grow w-[0] outline-[0]"
             placeholder="Phone"
           />
         </div>
-        <div className="bg-[#f0f0f0] flex items-center py-2.5 rounded hover:bg-[#e7e7e7]  ease-in-out">
-          <i className="fas fa-user pl-5 " htmlFor="fname"></i>
+        <div className="bg-[#f0f0f0] flex items-center py-2.5 rounded hover:bg-[#e7e7e7] ease-in-out">
+          <i className="pl-5 " htmlFor="fname"><RiLockPasswordFill /></i>
           <input
             type="password"
             className="bg-inherit ml-4 grow w-[0] outline-[0]"
@@ -47,9 +50,9 @@ function SignupForm() {
         </div>
         <button
           type="submit"
-          className="bg-[#0cb097] m-auto uppercase text-white font-semibold p-3 rounded-lg hover:cursor-pointer hover:bg-[#2d9b8b] hover:ease-in"
+          className="bg-[#0cb097] m-auto uppercase w-[50%] text-white font-semibold px-3 py-2.5 rounded-lg hover:cursor-pointer hover:bg-[#2d9b8b] hover:ease-in" 
         >
-          Sign up
+          Signup
         </button>
       </form>
 
