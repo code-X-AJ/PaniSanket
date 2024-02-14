@@ -10,7 +10,7 @@ function SignupContent() {
             Welcome Back! Signin to Continue Your Journey
           </p>
           <button className="border-white border-[2px] px-[35px] py-2 uppercase rounded text-xs mt-1 hover:bg-[#45e193]">
-            Signin
+            login
           </button>
         </div>
           <img
