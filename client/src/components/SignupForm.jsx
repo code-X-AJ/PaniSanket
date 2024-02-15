@@ -50,7 +50,7 @@ function SignupForm() {
         </div>
         <button
           type="submit"
-          className="bg-[#0cb097] m-auto uppercase w-[50%] text-white font-semibold px-3 py-2.5 rounded-lg hover:cursor-pointer hover:bg-[#2d9b8b] hover:ease-in" 
+          className="bg-[#0cb097] m-auto uppercase w-[50%] text-white font-semibold px-3 py-2.5 rounded-lg hover:cursor-pointer hover:bg-[#23a490] hover:ease-in" 
         >
           Signup
         </button>
