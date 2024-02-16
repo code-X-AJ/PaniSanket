@@ -6,11 +6,10 @@ export default function Navbar() {
         <>
             <nav className="sm:flex justify-around p-2 bg-cyan-400 z-50">
                 <div className="m-4">
-                    <a href='/' className="p-4 text-2xl font-black text-white"><b><i>Pani Sanket</i></b></a>
+                    <a href='/' className="p-4 text-2xl font-black text-white">Pani Sanket</a>
                 </div>
                 <div className='menu absolute top-8 right-6 flex-col justify-between w-[2rem] h-[1.6rem] flex sm:hidden' onClick={() => {
                     setMenuOpen(!menuOpen);
-                    console.log(menuOpen);
                 }}>
                     <span className='h-[0.3rem] w-full bg-white rounded'></span>
                     <span className='h-[0.3rem] w-full bg-white rounded'></span>

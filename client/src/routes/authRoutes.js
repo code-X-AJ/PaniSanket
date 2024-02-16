@@ -10,6 +10,8 @@ const authRoutes = [
     {
         name: <Login/>,
         path: 'login'
+    },
+    {
         name: <Homepage/>,
         path: 'home'
     },
