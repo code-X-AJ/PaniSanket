@@ -1,9 +1,10 @@
 require("dotenv").config();
-const https = require('https')
-const app = require('./app')
-const {connectDB} = require('./services/mongo')
-const port = process.env.PORT || 3000;
-const server = https.createServer(app);
+const http = require('http')
+const app = require('./src/app')
+const {connectDB} = require('./src/services/mongo')
+const port = process.env.PORT || 5000;
+
+const server = http.createServer(app);
 
 async function startServer(){
     await connectDB();

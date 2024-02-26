@@ -6,8 +6,8 @@ function AllRoutes() {
   return (
     <Routes>
       {
-        authRoutes.map((item) => (
-          <Route path={item.path} element={item.name} />
+        authRoutes.map((item,index) => (
+          <Route path={item.path} element={item.name} key={index} />
         ))
       }
     </Routes>

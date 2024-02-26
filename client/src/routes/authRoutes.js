@@ -4,15 +4,15 @@ import Login from "../pages/Login"
 
 const authRoutes = [
     {
-        name: <Signup/>,
+        name: <Signup />,
         path: 'signup'
     },
     {
-        name: <Login/>,
+        name: <Login />,
         path: 'login'
     },
     {
-        name: <Homepage/>,
+        name: <Homepage />,
         path: 'home'
     },
 ]
