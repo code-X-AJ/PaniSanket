@@ -13,7 +13,7 @@ function Signup() {
     if(localStorage.getItem('PaniSanket-user')){
       navigate("/home")
     }
-  },[])
+  })
   
   return (
     <>

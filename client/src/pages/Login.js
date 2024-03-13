@@ -1,12 +1,12 @@
-import { useNavigate } from "react-router-dom";
-import React,{ useEffect } from 'react'
+// import { useNavigate } from "react-router-dom";
+// import React,{ useEffect } from 'react'
 import LoginContent from '../components/LoginContent'
 import LoginForm from '../components/LoginForm'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Login() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   document.body.style.overflow = "hidden";
   
   // useEffect(()=>{

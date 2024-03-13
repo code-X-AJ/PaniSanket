@@ -8,9 +8,9 @@ function LoginContent() {
         <p className="font-light text-md">
           Join Us Today and Unlock a World of Possibilites!
         </p>
-        <button className="border-white border-[2px] px-[35px] py-2 uppercase rounded text-xs mt-1 hover:bg-[#45e193]">
+        <a href='/signup' className="border-white border-[2px] px-[35px] py-2 uppercase rounded text-xs mt-1 hover:bg-[#45e193]">
           Signin
-        </button>
+        </a>
       </div>
         <img
           src="https://i.ibb.co/6HXL6q1/Privacy-policy-rafiki.png"
