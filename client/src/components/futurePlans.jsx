@@ -1,4 +1,5 @@
 import React from 'react'
+import future_Plans from '../assets/future_plans.jpg'
 
 export default function futurePlans() {
     return (
@@ -16,7 +17,7 @@ export default function futurePlans() {
                     <li className='text-4xl'>eabav</li>
                 </ul>
                 <div className='mr-6'>
-                    <img className='' src="https://imgs.search.brave.com/aR5c79jxKhAnv6heZgybNw0PKo3ii2ehk1jRuCnaoho/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9ibG9n/LmxvZ3JvY2tldC5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjQvMDEvcmVhY3Qt/bmF0aXZlLW5hdmln/YXRpb24tdHV0b3Jp/YWwucG5n" alt=""></img>
+                    <img className='' src={future_Plans} alt=""></img>
                 </div>
             </div>
 

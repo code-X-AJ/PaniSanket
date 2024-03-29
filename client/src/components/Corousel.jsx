@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 
 export default function Corousel({ data }) {
@@ -11,6 +11,12 @@ export default function Corousel({ data }) {
   const prevSlide = () => {
     setSlide(slide === 0 ? data.slides.length - 1 : slide - 1); 
   };
+
+    // Auto-advance the carousel
+    useEffect(() => {
+      const interval = setInterval(nextSlide, 5000); // Change image every 5 seconds
+      return () => clearInterval(interval); // Clean up the interval on unmount
+    }, [slide, data.slides.length]);
 
   return (
     <div className="relative flex justify-center">
