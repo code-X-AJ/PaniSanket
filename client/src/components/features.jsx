@@ -26,7 +26,7 @@ export default function Features(props) {
     }
 
     var text = (
-        <div className='w-3/6'>
+        <div className='sm:w-3/6 w-4/5'>
             <h1 className='m-5 text-3xl font-bold'>{title}</h1>
             <p className='m-5 text-justify text-2xl'>{para}</p>
         </div>

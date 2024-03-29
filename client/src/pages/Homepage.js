@@ -1,7 +1,7 @@
 import React from 'react'
 import ContactUs from '../components/ContactUs'
 import Navbar from '../components/Navbar'
-import Features from '../components/Features'
+import FeatureBlock from '../components/Feature_block'
 import FuturePlans from '../components/FuturePlans'
 import AboutUs from '../components/AboutUs'
 import Scroller from '../components/Scroller'
@@ -14,13 +14,9 @@ function home() {
     <>
       <Navbar />
 
-      <Corousel data={slides}/>
+      <Corousel data={slides} />
 
-      <Features orient={true} feature={1} />
-
-      <Features orient={false} feature={2} />
-
-      <Features orient={true} feature={3} />
+      <FeatureBlock />
 
       <FuturePlans />
 

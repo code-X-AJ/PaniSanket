@@ -1,6 +1,7 @@
 import Homepage from "../pages/Homepage"
 import Signup from "../pages/Signup"
 import Login from "../pages/Login"
+import Reporting from "../pages/Reporting"
 
 const authRoutes = [
     {
@@ -15,6 +16,10 @@ const authRoutes = [
         name: <Homepage />,
         path: 'home'
     },
+    {
+        name: <Reporting/>,
+        path: 'report'
+    }
 ]
 
 export default authRoutes
