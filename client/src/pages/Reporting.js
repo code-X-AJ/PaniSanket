@@ -1,9 +1,8 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import AboutUs from '../components/AboutUs'
-import Scroller from '../components/Scroller'
 import Reports from '../components/Reports'
-import ContactUs from '../components/ContactUs'
+import ShowMore from '../components/ShowMore'
+import CreateNew from '../components/CreateNew'
 
 export default function Reporting() {
     return (
@@ -11,12 +10,10 @@ export default function Reporting() {
             <Navbar />
 
             <Reports/>
-
-            <AboutUs />
-
-            <ContactUs />
             
-            <Scroller />
+            <ShowMore/>
+
+            <CreateNew/>
         </div>
     )
 }

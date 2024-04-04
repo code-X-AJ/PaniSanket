@@ -16,6 +16,7 @@ export default function Corousel({ data }) {
     useEffect(() => {
       const interval = setInterval(nextSlide, 5000); // Change image every 5 seconds
       return () => clearInterval(interval); // Clean up the interval on unmount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [slide, data.slides.length]);
 
   return (
