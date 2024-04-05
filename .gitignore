@@ -1,3 +1,20 @@
 node_modules
 Pani-Sanket_main
+Pani-Sanket_main.rar
+Pani-Sanket_main 1
+Pani-Sanket_main 1.rar
 vite
+<<<<<<< HEAD
+Pani-Sanket_main 1.rar
+homepage.png
+homepage2.png
+water site design.jpg
+=======
+homepage.png
+homepage2.png
+water site design.jpg
+*.env
+server/.env
+env
+
+>>>>>>> main

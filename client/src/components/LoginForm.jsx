@@ -47,7 +47,7 @@ function LoginForm() {
       if (data.status === true) {
         console.log(data.user);
         localStorage.setItem(secretKey, JSON.stringify(data.user));
-        navigate("/home");
+        navigate("/");
       }
     }
   };
@@ -119,18 +119,18 @@ function LoginForm() {
       <div className="flex flex-col items-center">
         <p className="mb-2">Or Login up with social platforms</p>
         <div className="flex gap-2 ">
-          <h3 className="border-2 p-2 rounded-[50%] flex justify-center items-center h-[46px] w-[46px] border-slate-500 hover:cursor-pointer hover:bg-slate-400 ease-out duration-300">
+          <a className="border-2 p-2 rounded-[50%] flex justify-center items-center h-[46px] w-[46px] border-slate-500 hover:cursor-pointer hover:bg-slate-400 ease-out duration-300">
             <i className="fab fa-facebook-f"> </i>
-          </h3>
-          <h3 className="border-2 p-2 rounded-[50%] flex justify-center items-center h-[46px] w-[46px] border-slate-500 hover:cursor-pointer hover:bg-slate-400 ease-out duration-300">
+          </a>
+          <a href="http://localhost:5000/api/auth/google" className="border-2 p-2 rounded-[50%] flex justify-center items-center h-[46px] w-[46px] border-slate-500 hover:cursor-pointer hover:bg-slate-400 ease-out duration-300">
             <i className="fab fa-google"> </i>
-          </h3>
-          <h3 className="border-2 p-2 rounded-[50%] flex justify-center items-center h-[46px] w-[46px] border-slate-500 hover:cursor-pointer hover:bg-slate-400 ease-out duration-300">
+          </a>
+          <a className="border-2 p-2 rounded-[50%] flex justify-center items-center h-[46px] w-[46px] border-slate-500 hover:cursor-pointer hover:bg-slate-400 ease-out duration-300">
             <i className="fab fa-linkedin-in"> </i>
-          </h3>
-          <h3 className="border-2 p-2 rounded-[50%] flex justify-center items-center h-[46px] w-[46px] border-slate-500 hover:cursor-pointer hover:bg-slate-400 ease-out duration-300">
+          </a>
+          <a className="border-2 p-2 rounded-[50%] flex justify-center items-center h-[46px] w-[46px] border-slate-500 hover:cursor-pointer hover:bg-slate-400 ease-out duration-300">
             <i className="fab fa-twitter"> </i>
-          </h3>
+          </a>
         </div>
       </div>
       <ToastContainer />

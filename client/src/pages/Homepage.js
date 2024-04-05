@@ -7,7 +7,7 @@ import AboutUs from '../components/AboutUs'
 import Scroller from '../components/Scroller'
 import Corousel from '../components/Corousel'
 
-import slides from '../components/data/corouseldata.json'
+import slides from '../components/data/corouseldata'
 
 function home() {
   return (
@@ -21,8 +21,8 @@ function home() {
       <FuturePlans />
 
       <AboutUs />
-
-      <ContactUs />
+      <ContactUs /> 
+  
 
       <Scroller />
     </>

@@ -7,6 +7,7 @@ import CreateNew from '../components/CreateNew'
 export default function Reporting() {
     return (
         <div>
+            
             <Navbar />
 
             <Reports/>

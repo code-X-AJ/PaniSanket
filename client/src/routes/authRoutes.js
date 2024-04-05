@@ -1,4 +1,5 @@
 import Homepage from "../pages/Homepage"
+import Home from "../pages/Home"
 import Signup from "../pages/Signup"
 import Login from "../pages/Login"
 import Reporting from "../pages/Reporting"
@@ -12,9 +13,13 @@ const authRoutes = [
         name: <Login />,
         path: 'login'
     },
+    // {
+    //     name: <Homepage />,
+    //     path: ''
+    // },
     {
-        name: <Homepage />,
-        path: 'home'
+        name: <Home />,
+        path: ''
     },
     {
         name: <Reporting/>,

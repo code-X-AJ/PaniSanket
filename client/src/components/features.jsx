@@ -32,6 +32,7 @@ export default function Features(props) {
         </div>
     );
 
+
     var img = (
         <div className='m-5'>
             <img src={img_src} alt=''/>

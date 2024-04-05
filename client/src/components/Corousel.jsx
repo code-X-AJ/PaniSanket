@@ -5,11 +5,11 @@ export default function Corousel({ data }) {
   const [slide, setSlide] = useState(0);
 
   const nextSlide = () => {
-    setSlide(slide === data.slides.length - 1 ? 0 : slide + 1);
+    setSlide(slide === data.length - 1 ? 0 : slide + 1);
   };
 
   const prevSlide = () => {
-    setSlide(slide === 0 ? data.slides.length - 1 : slide - 1); 
+    setSlide(slide === 0 ? data.length - 1 : slide - 1); 
   };
 
     // Auto-advance the carousel
@@ -21,9 +21,9 @@ export default function Corousel({ data }) {
 
   return (
     <div className="relative flex justify-center">
-      {/* Ensure slides array exists in the data object */}
+      {/* Ensure array exists in the data object */}
       <BsArrowLeftCircleFill onClick={prevSlide} className="absolute drop-shadow-lg h-8 w-8 left-4 self-center cursor-pointer" style={{ color: "white" }} />
-      {data.slides && Array.isArray(data.slides) && data.slides.map((item, idx) => (
+      {data && Array.isArray(data) && data.map((item, idx) => (
         <img
           src={item.src}
           alt={item.alt}
@@ -34,7 +34,7 @@ export default function Corousel({ data }) {
       <BsArrowRightCircleFill onClick={nextSlide} className="absolute drop-shadow-lg h-8 w-8 right-4 self-center cursor-pointer" style={{ color: "white" }} />
 
       <span className="absolute flex bottom-4">
-        {data.slides.map((_, idx) => {
+        {data.map((_, idx) => {
           return (
             <button
               key={idx}
