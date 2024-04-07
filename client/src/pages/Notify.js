@@ -3,6 +3,8 @@ import Notify from "../components/Notify";
 
 export default function notify() {
   return (
-    <Notify/>
+    <div>
+      <Notify />
+    </div>
   )
 }

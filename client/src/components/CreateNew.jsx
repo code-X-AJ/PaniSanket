@@ -23,7 +23,7 @@ function CreateNew() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
         <>
-            <button className="fixed bottom-6 right-4 inline-block py-2 px-6 rounded-l-xl rounded-t-xl bg-cyan-600 hover:bg-white hover:text-cyan-600 text-gray-50 font-bold leading-loose transition duration-200" onClick={onOpen}>
+            <button className="fixed bottom-6 right-4 inline-block py-2 px-6 rounded-l-xl rounded-t-xl bg-cyan-600 hover:bg-cyan-700 hover:text-white text-gray-50 font-bold leading-loose transition duration-200" onClick={onOpen}>
                 <IoIosAdd className='size-8 m-1 inline-block' />
                 Create New
             </button>

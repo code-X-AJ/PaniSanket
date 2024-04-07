@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from './Navbar'
+import Navbar from './Navbar-new'
 import {
     Accordion,
     AccordionItem,
@@ -8,13 +8,17 @@ import {
     AccordionIcon,
     Box
 } from '@chakra-ui/react'
+import waterBG from "../assets/waterBG.png";
+
 
 export default function notify() {
     return (
-        <div>
-            <Navbar />
-            <div className="container m-8 mr-4">
-                <Accordion defaultIndex={[0]} allowMultiple w={'92vw'}>
+        <div className="bg-cover bg-center h-screen " style={{ backgroundImage: `url(${waterBG})` }}>
+            <div className="mx-[10%]">
+                <Navbar />
+            </div>
+            <div className="container m-8 mr-4 bg-none">
+                <Accordion defaultIndex={[0]} allowMultiple w={'92vw'} bg={'white'}>
                     <AccordionItem>
                         <h2>
                             <AccordionButton>
