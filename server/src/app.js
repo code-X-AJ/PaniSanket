@@ -7,6 +7,7 @@ const session = require("express-session")
 
 // local Imports
 const authRouter = require('./routes/userAuth/userAuth.route')
+const reportRouter = require('./routes/reporting/report.route')
 const { initGooglePassport } = require("./services/passport.google")
 
 app.use(cors());
@@ -25,6 +26,7 @@ app.use(passport.session())
 app.use(express.json())
 
 app.use('/api/auth/', authRouter)
+app.use('/api/report/', reportRouter)
 
 
 module.exports = app

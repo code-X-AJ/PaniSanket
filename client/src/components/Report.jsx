@@ -1,32 +1,71 @@
 import React from 'react'
 import {
-  Card,
-  CardBody,
-  Heading,
-  Text,
-  Image,
-  Stack,
-  Divider,
+    Card,
+    CardHeader,
+    CardBody,
+    CardFooter,
+    Button,
+    Flex,
+    Avatar,
+    Heading,
+    Box,
+    Text,
+    IconButton,
+    Image,
 } from '@chakra-ui/react'
+import { BsThreeDotsVertical } from 'react-icons/bs';
+import { BiChat, BiLike } from 'react-icons/bi';
 
 
-export default function Report(props) {
-  return (
-    <Card maxW='sm' bg='#DBF3F9'>
-      <CardBody>
-        <Image
-          src={props.image}
-          alt='Green double couch with wooden legs'
-          borderRadius='lg'
-        />
-        <Stack mt='6' spacing='3'>
-          <Heading size='md'>{props.title}</Heading>
-          <Text>
-            {props.description}
-          </Text>
-        </Stack>
-      </CardBody>
-      <Divider />
-    </Card>
-  );
+export default function Report() {
+    return(
+    <Card maxW='sm' m={'1vw'}>
+    <CardHeader>
+        <Flex spacing='4'>
+            <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
+                <Avatar name='Segun Adebayo' src='https://bit.ly/sage-adebayo' />
+
+                <Box>
+                    <Heading size='sm'>Segun Adebayo</Heading>
+                    <Text>Creator, Chakra UI</Text>
+                </Box>
+            </Flex>
+            <IconButton
+                variant='ghost'
+                colorScheme='gray'
+                aria-label='See menu'
+                icon={<BsThreeDotsVertical />}
+            />
+        </Flex>
+    </CardHeader>
+    <CardBody>
+        <Text>
+            With Chakra UI, I wanted to sync the speed of development with the speed
+            of design. I wanted the developer to be just as excited as the designer to
+            create a screen.
+        </Text>
+    </CardBody>
+    <Image
+        objectFit='cover'
+        src='https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
+        alt='Chakra UI'
+    />
+
+    <CardFooter
+        justify='space-between'
+        flexWrap='wrap'
+        sx={{
+            '& > button': {
+                minW: '100px',
+            },
+        }}
+    >
+        <Button flex='1' variant='ghost' leftIcon={<BiLike />}>
+            Like
+        </Button>
+        <Button flex='1' variant='ghost' leftIcon={<BiChat />}>
+            Comment
+        </Button>
+    </CardFooter>
+</Card>);
 }
