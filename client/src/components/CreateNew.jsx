@@ -6,17 +6,11 @@ import {
     Modal,
     ModalOverlay,
     ModalContent,
-    ModalHeader,
     ModalFooter,
     ModalBody,
     ModalCloseButton,
     useDisclosure,
     Button,
-    FormControl,
-    FormLabel,
-    // FormErrorMessage,
-    FormHelperText,
-    Input
 } from '@chakra-ui/react'
 
 function CreateNew() {
@@ -28,28 +22,47 @@ function CreateNew() {
                 Create New
             </button>
 
-            <Modal isOpen={isOpen} onClose={onClose}>
-                <ModalOverlay />
+            <Modal isOpen={isOpen} onClose={onClose} size={"xl"}>
+                <ModalOverlay bg='blackAlpha.300' backdropFilter='blur(8px)' />
                 <ModalContent>
-                    <ModalHeader>Report</ModalHeader>
+                    <h1 className='text-center text-5xl m-4 font-bold'>Report</h1>
                     <ModalCloseButton />
                     <ModalBody>
-                        <FormControl>
-                            <FormLabel>Email address</FormLabel>
-                            <Input type='email' />
-                            <FormHelperText>We'll never share your email.</FormHelperText>
-                        </FormControl>
+                        <form action="" method="post">
+                            <ul className='grid grid-cols-1 mx-20'>
+                                <li className='grid grid-cols-2 content-between m-2'>
+                                    <label htmlFor="fullname">Full Name :</label>
+                                    <input type="text" name="fullname" id="" className='border-black border-1 rounded' />
+                                </li>
+                                <li  className='grid grid-cols-2 content-between m-2'>
+                                    <label htmlFor="Address">Address :</label>
+                                    <input type="text" name="Address" id="" className='border-black border-1 rounded ' />
+                                </li>
+                                <li  className='grid grid-cols-2 content-between m-2'>
+                                    <label htmlFor="Issue">Issue :</label>
+                                    <input type="text" name="Issue" id="" className='border-black border-1 rounded ' />
+                                </li>
+                                <li  className='grid grid-cols-2 content-between m-2'>
+                                    <label htmlFor="description">description :</label>
+                                    <textarea name="descripton" id="" cols="30" rows="5" className='border-black border-1 rounded '></textarea>
+                                </li>
+                                <li  className='grid grid-cols-2 content-between m-2'>
+                                    <label htmlFor="Email">Email :</label>
+                                    <input type="text" name="Email" id="" className='border-black border-1 rounded ' />
+                                </li>
+                                <li  className='grid grid-cols-2 content-between m-2'>
+                                    <label htmlFor="images">Images :</label>
+                                    <input type="file" name="images" id="" className='w-24' />
+                                </li>
+                            </ul>
+                        </form>
                     </ModalBody>
 
                     <ModalFooter>
                         <Button colorScheme='blue' mr={3} onClick={onClose}>
                             Close
                         </Button>
-                        <Button
-                            mr={3}
-                            colorScheme='teal'
-                            type='submit'
-                        >
+                        <Button mr={3} colorScheme='teal' type='submit'>
                             Submit
                         </Button>
                     </ModalFooter>

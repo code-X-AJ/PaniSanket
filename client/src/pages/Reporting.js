@@ -11,6 +11,7 @@ import ShowMore from '../components/ShowMore'
 import CreateNew from '../components/CreateNew'
 import sampleImg from '../assets/kaori.png'
 import { allReports, newReport } from '../utils/APIRoutes'
+import waterBG from "../assets/BG.png";
 
 export default function Reporting() {
 
