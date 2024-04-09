@@ -1,9 +1,9 @@
-const { createNewReport, fetchAllReports } = require('../../models/reporting/report.model')
+const { createNewNotification, fetchAllNotification } = require('../../models/notification/notification.model')
 
-async function httpPostNewReport(req, res) {
+async function httpPostNewNotification(req, res) {
     try {
         const info = req.body
-        const result = await createNewReport(info);
+        const result = await createNewNotification(info);
         return res.json(result)
 
     } catch (err) {
@@ -12,9 +12,9 @@ async function httpPostNewReport(req, res) {
     }
 }
 
-async function httpGetAllReports(req, res) {
+async function httpGetAllNotification(req, res) {
     try {
-        const result = await fetchAllReports();
+        const result = await fetchAllNotification();
         return res.json(result)
 
     } catch (err) {
@@ -24,6 +24,6 @@ async function httpGetAllReports(req, res) {
 }
 
 module.exports = {
-    httpPostNewReport,
-    httpGetAllReports,
+    httpPostNewNotification,
+    httpGetAllNotification,
 }

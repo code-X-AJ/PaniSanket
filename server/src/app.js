@@ -7,6 +7,7 @@ const session = require("express-session")
 
 // local Imports
 const authRouter = require('./routes/userAuth/userAuth.route')
+const notifyRouter = require('./routes/notification/notification.route')
 const reportRouter = require('./routes/reporting/report.route')
 const { initGooglePassport } = require("./services/passport.google")
 
@@ -23,10 +24,11 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.use(express.json())
+app.use(express.json({ limit: '50mb' }));
 
 app.use('/api/auth/', authRouter)
 app.use('/api/report/', reportRouter)
+app.use('/api/notify/', notifyRouter)
 
 
 module.exports = app
