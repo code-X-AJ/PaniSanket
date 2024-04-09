@@ -5,13 +5,14 @@ import { Slide, ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { Buffer } from "buffer";
 
-import Navbar from '../components/Navbar'
+import Navbar from '../components/Navbar-new'
 import Reports from '../components/Reports'
 import ShowMore from '../components/ShowMore'
 import CreateNew from '../components/CreateNew'
 import sampleImg from '../assets/kaori.png'
 import { allReports, newReport } from '../utils/APIRoutes'
 import waterBG from "../assets/BG.png";
+import Hero from '../components/Hero';
 
 export default function Reporting() {
 
@@ -29,7 +30,7 @@ export default function Reporting() {
 
     const navigate = useNavigate();
 
-    const [reports, setReports] = useState(undefined);
+    const [reports, setReports] = useState(null);
 
     const [values, setValues] = useState({
         title: "",
@@ -66,6 +67,7 @@ export default function Reporting() {
         async function fetchReports() {
             const { data } = await axios.get(allReports);
             if (data.status) {
+                console.log(data.reports);
                 setReports(data.reports)
             }
         }
@@ -97,28 +99,26 @@ export default function Reporting() {
 
     return (
         <div>
-            <input
-                type="file"
-                lable="Image"
-                name="myFile"
-                id='file-upload'
-                accept='.jpeg, .png, .jpg'
-                onChange={(e) => handleFileUpload(e)}
-            />
+            {/* <div
+                className="bg-cover bg-center h-screen "
+                style={{ backgroundImage: `url(${waterBG})` }}
+            ></div>
 
-            <input type="time" placeholder='Time entering ' />
-            
-
-            {
-                // <img src={values.image} alt={`Description`} />
-
-            }
-
+            <div className="mx-[10%]">
             <Navbar />
+            </div> */}
 
+            <div
+                className="bg-cover bg-center h-screen "
+                style={{ backgroundImage: `url(${waterBG})` }}
+            >
+                <div className="mx-[10%]">
+                    <Navbar />
+                </div>
             <Reports />
-
             <ShowMore />
+            </div>
+
 
             <CreateNew />
             <ToastContainer />
