@@ -28,31 +28,31 @@ function CreateNew() {
                     <h1 className='text-center text-5xl m-4 font-bold'>Report</h1>
                     <ModalCloseButton />
                     <ModalBody>
-                        <form action="" method="post">
+                        <form action="" method="post" className=''>
                             <ul className='grid grid-cols-1 mx-20'>
-                                <li className='grid grid-cols-2 content-between m-2'>
-                                    <label htmlFor="fullname">Full Name :</label>
-                                    <input type="text" name="fullname" id="" className='border-black border-1 rounded' />
+                                <li className='grid m-1'>
+                                    <label htmlFor="fullname">Full Name</label>
+                                    <input type="text" name="fullname" id="" placeholder='Enter your fullname' className='border-teal-600 border-b-2 h-8 focus:border-b-2 focus:shadow-[0.2rem_0.3rem_0.4rem_0.1rem] focus:shadow-teal-200 outline-none' />
                                 </li>
-                                <li  className='grid grid-cols-2 content-between m-2'>
-                                    <label htmlFor="Address">Address :</label>
-                                    <input type="text" name="Address" id="" className='border-black border-1 rounded ' />
+                                <li  className='grid m-1'>
+                                    <label htmlFor="Address">Address</label>
+                                    <input type="text" name="Address" id="" placeholder='Enter your Address' className='border-teal-600 border-b-2 h-8 focus:border-b-2 focus:shadow-[0.2rem_0.3rem_0.4rem_0.1rem] focus:shadow-teal-200 outline-none' />
                                 </li>
-                                <li  className='grid grid-cols-2 content-between m-2'>
-                                    <label htmlFor="Issue">Issue :</label>
-                                    <input type="text" name="Issue" id="" className='border-black border-1 rounded ' />
+                                <li  className='grid m-1'>
+                                    <label htmlFor="Issue">Issue</label>
+                                    <input type="text" name="Issue" id="" placeholder='Enter your Issue' className='border-teal-600 border-b-2 h-8 focus:border-b-2 focus:shadow-[0.2rem_0.3rem_0.4rem_0.1rem] focus:shadow-teal-200 outline-none' />
                                 </li>
-                                <li  className='grid grid-cols-2 content-between m-2'>
-                                    <label htmlFor="description">description :</label>
-                                    <textarea name="descripton" id="" cols="30" rows="5" className='border-black border-1 rounded '></textarea>
+                                <li  className='grid m-1'>
+                                    <label htmlFor="description">description</label>
+                                    <textarea name="descripton" id="" placeholder='Enter your descripton' cols="30" rows="1" className='border-teal-600 border-b-2 focus:border-b-2 focus:shadow-[0.2rem_0.3rem_0.4rem_0.1rem] focus:shadow-teal-200 outline-none flex justify-end'></textarea>
                                 </li>
-                                <li  className='grid grid-cols-2 content-between m-2'>
-                                    <label htmlFor="Email">Email :</label>
-                                    <input type="text" name="Email" id="" className='border-black border-1 rounded ' />
+                                <li  className='grid m-1'>
+                                    <label htmlFor="Email">Email</label>
+                                    <input type="email" name="Email" id="" placeholder='Enter your Email' className='border-teal-600 border-b-2 h-8 focus:border-b-2 focus:shadow-[0.2rem_0.3rem_0.4rem_0.1rem] focus:shadow-teal-200 outline-none' />
                                 </li>
-                                <li  className='grid grid-cols-2 content-between m-2'>
-                                    <label htmlFor="images">Images :</label>
-                                    <input type="file" name="images" id="" className='w-24' />
+                                <li  className='grid m-1'>
+                                    <label htmlFor="images">Images</label>
+                                    <input type="file" name="images" id="" placeholder='Enter your images' className='' />
                                 </li>
                             </ul>
                         </form>

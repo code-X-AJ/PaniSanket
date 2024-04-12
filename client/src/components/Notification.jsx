@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from './Navbar'
 import {
     Accordion,
     AccordionItem,
@@ -12,7 +11,6 @@ import {
 export default function Notification() {
     return (
         <div>
-            <Navbar />
             <div className="container m-8 mr-4">
                 <Accordion defaultIndex={[0]} allowMultiple w={'92vw'}>
                     <AccordionItem>

@@ -42,17 +42,18 @@ export default function Reports() {
     }, []);
 
     return (
-        <div className='m-4 '>
+        <div className='m-4'>
             <h1 className='text-center text-5xl m-4 font-bold'>Reports</h1>
 
             {
-                isLoaded && <div className='grid grid-cols-1 gap-16 w-[50vw] my-5'>
+                isLoaded && <div className='grid grid-cols-2 gap-16 my-5'>
                 {reports.map((report, id) => (
                     <Report
                         key={id}
                         title={report.title}
                         description={report.description}
                         image={report.image}
+                        address={report.address}
                     />
                 ))}
             </div>

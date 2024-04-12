@@ -6,6 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
 import Notification from "../components/Notification";
 import { allNotify, newNotify } from '../utils/APIRoutes'
+import Navbar from '../components/Navbar-new'
+import waterBG from "../assets/BG.png";
 
 
 export default function Notify() {
@@ -70,9 +72,18 @@ export default function Notify() {
 
 
   return (
-    <>
+    <div
+      className="bg-cover bg-center h-screen overflow-hidden"
+      style={{ backgroundImage: `url(${waterBG})` }}
+    >
+      <div className="mx-[10%]">
+        <Navbar />
+      </div>
+
+
       <Notification />
       <ToastContainer />
-    </>
+    </div>
+
   )
 }

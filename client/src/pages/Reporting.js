@@ -126,7 +126,6 @@ export default function Reporting() {
                     <Navbar />
                 </div>
                 <Reports />
-                <ShowMore />
             </div>
 
 
