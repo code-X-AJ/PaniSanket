@@ -1,7 +1,8 @@
 const { createNewNotification, fetchAllNotification } = require('../../models/notification/notification.model')
 
 async function httpPostNewNotification(req, res) {
-    try {
+    try {    console.log("new notify");
+
         const info = req.body
         const result = await createNewNotification(info);
         return res.json(result)
@@ -13,7 +14,7 @@ async function httpPostNewNotification(req, res) {
 }
 
 async function httpGetAllNotification(req, res) {
-    try {
+    try {    console.log("all notify");
         const result = await fetchAllNotification();
         return res.json(result)
 

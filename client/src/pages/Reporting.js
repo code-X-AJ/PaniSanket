@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from "axios"
@@ -17,6 +18,7 @@ import Hero from '../components/Hero';
 export default function Reporting() {
 
     const [postImage, setPostImage] = useState(undefined)
+    // const [reports, setReports] = useState(null);
 
 
     const toastOptions = {
@@ -30,7 +32,6 @@ export default function Reporting() {
 
     const navigate = useNavigate();
 
-    const [reports, setReports] = useState(null);
 
     const [values, setValues] = useState({
         title: "",
@@ -63,16 +64,16 @@ export default function Reporting() {
     }
 
 
-    useEffect(() => {
-        async function fetchReports() {
-            const { data } = await axios.get(allReports);
-            if (data.status) {
-                console.log(data.reports);
-                setReports(data.reports)
-            }
-        }
-        fetchReports();
-    }, []);
+    // useEffect(() => {
+    //     async function fetchReports() {
+    //         const { data } = await axios.get(allReports);
+    //         if (data.status) {
+    //             console.log(data.reports);
+    //             setReports(data.reports)
+    //         }
+    //     }
+    //     fetchReports();
+    // }, []);
 
     function convertToBase64(file) {
         return new Promise((resolve, reject) => {
@@ -108,6 +109,15 @@ export default function Reporting() {
             <Navbar />
             </div> */}
 
+            {/* <input
+                type="file"
+                lable="Image"
+                name="myFile"
+                id='file-upload'
+                accept='.jpeg, .png, .jpg'
+                onChange={(e) => handleFileUpload(e)}
+            /> */}
+
             <div
                 className="bg-cover bg-center h-screen "
                 style={{ backgroundImage: `url(${waterBG})` }}
@@ -115,8 +125,8 @@ export default function Reporting() {
                 <div className="mx-[10%]">
                     <Navbar />
                 </div>
-            <Reports />
-            <ShowMore />
+                <Reports />
+                <ShowMore />
             </div>
 
 

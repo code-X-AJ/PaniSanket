@@ -1,6 +1,7 @@
 const { createNewReport, fetchAllReports } = require('../../models/reporting/report.model')
 
 async function httpPostNewReport(req, res) {
+    console.log("new report");
     try {
         const info = req.body
         const result = await createNewReport(info);
@@ -13,6 +14,7 @@ async function httpPostNewReport(req, res) {
 }
 
 async function httpGetAllReports(req, res) {
+    console.log("all reports");
     try {
         const result = await fetchAllReports();
         return res.json(result)
