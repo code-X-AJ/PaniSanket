@@ -117,15 +117,18 @@ export default function Reporting() {
                 accept='.jpeg, .png, .jpg'
                 onChange={(e) => handleFileUpload(e)}
             /> */}
-
+{/* to-blue-500 */}
             <div
-                className="bg-cover bg-center h-screen "
-                style={{ backgroundImage: `url(${waterBG})` }}
+                className="bg-cover bg-center h-screen bg-gradient-to-b from-blue-600 to-white "
+                // className="bg-cover bg-center h-screen "
+                // style={{ backgroundImage: `url(${waterBG})` }}
             >
                 <div className="mx-[10%]">
                     <Navbar />
                 </div>
+                <div className="mx-[3%]">
                 <Reports />
+                </div>
             </div>
 
 
