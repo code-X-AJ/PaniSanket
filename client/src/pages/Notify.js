@@ -73,8 +73,8 @@ export default function Notify() {
 
   return (
     <div
-      className="bg-cover bg-center h-screen overflow-hidden"
-      style={{ backgroundImage: `url(${waterBG})` }}
+      className="bg-cover bg-center h-screen bg-gradient-to-b from-blue-600 to-white"
+      // style={{ backgroundImage: `url(${waterBG})` }}
     >
       <div className="mx-[10%]">
         <Navbar />
