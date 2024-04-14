@@ -62,7 +62,7 @@ const App = () => {
                     </Button>,
                 ]}
             >
-                <h1 className="text-center text-5xl m-4 font-bold">Generate </h1>
+                <h1 className="text-center text-5xl m-4 font-bold">Notify Others</h1>
                 <div>
                     <Form
                         labelCol={{
