@@ -14,6 +14,31 @@ import {
   useDisclosure,
   Button,
 } from "@chakra-ui/react";
+import { PlusOutlined } from '@ant-design/icons';
+import {
+  ButtonAnt,
+  Cascader,
+  Checkbox,
+  ColorPicker,
+  DatePicker,
+  Form,
+  Input,
+  InputNumber,
+  Radio,
+  Select,
+  Slider,
+  Switch,
+  TreeSelect,
+  Upload,
+} from 'antd';
+const { RangePicker } = DatePicker;
+const { TextArea } = Input;
+const normFile = (e) => {
+  if (Array.isArray(e)) {
+    return e;
+  }
+  return e?.fileList;
+};
 
 function CreateNew() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -65,7 +90,7 @@ function CreateNew() {
 
   const handleValidation = () => {
     const { title, description, city, address } = values;
-    console.log("handle validdation......",title, description, city, address );
+    console.log("handle validdation......", title, description, city, address);
     // if (title === "" || description === "" || city === "" || address === "") {
     //   toast.error(
     //     "invalid data",
@@ -109,7 +134,7 @@ function CreateNew() {
       });
 
       console.log("server response is ....", data);
-      
+
       if (data.status === false) {
         toast.error(data.msg, toastOptions);
       }
@@ -137,80 +162,55 @@ function CreateNew() {
           <h1 className="text-center text-5xl m-4 font-bold">Report</h1>
           <ModalCloseButton />
           <ModalBody>
-            <form
-              action=""
-              method="post"
-              className=""
-              onSubmit={(event) => {
-                handleSubmit(event);
+
+            <Form
+              labelCol={{
+                span: 4,
               }}
+              wrapperCol={{
+                span: 14,
+              }}
+              layout="horizontal"
+              style={{
+                maxWidth: 600,
+              }}
+              className="flex flex-col ml-16"
             >
-              <ul className="grid grid-cols-1 mx-20">
-                <li className="grid m-1">
-                  <label htmlFor="fullname">Title</label>
-                  <input
-                    type="text"
-                    name="title"
-                    id=""
-                    placeholder="Enter your fullname"
-                    className="border-teal-600 border-b-2 h-8 focus:border-b-2 focus:shadow-[0.2rem_0.3rem_0.4rem_0.1rem] focus:shadow-teal-200 outline-none"
-                    onChange={(e) => {
-                      handleChange(e);
+
+              <Form.Item label="Title">
+                <Input />
+              </Form.Item>
+              <Form.Item label="City">
+                <Input />
+              </Form.Item>
+              <Form.Item label="Address">
+                <Input />
+              </Form.Item>
+              <Form.Item label="Description">
+                <TextArea rows={2} />
+              </Form.Item>
+
+              <Form.Item label="Image" valuePropName="fileList" getValueFromEvent={normFile}>
+                <Upload action="/upload.do" listType="picture-card">
+                  <button
+                    style={{
+                      border: 0,
+                      background: 'none',
                     }}
-                  />
-                </li>
-                <li className="grid m-1">
-                  <label htmlFor="description">Desciption</label>
-                  <textarea
-                    name="description"
-                    id=""
-                    placeholder="Enter your descripton"
-                    cols="30"
-                    rows="1"
-                    className="border-teal-600 border-b-2 focus:border-b-2 focus:shadow-[0.2rem_0.3rem_0.4rem_0.1rem] focus:shadow-teal-200 outline-none flex justify-end"
-                    onChange={(e) => {
-                      handleChange(e);
-                    }}
-                  ></textarea>
-                </li>
-                <li className="grid m-1">
-                  <label htmlFor="Address">City</label>
-                  <input
-                    type="text"
-                    name="city"
-                    id=""
-                    placeholder="Enter your Address"
-                    className="border-teal-600 border-b-2 h-8 focus:border-b-2 focus:shadow-[0.2rem_0.3rem_0.4rem_0.1rem] focus:shadow-teal-200 outline-none"
-                    onChange={(e) => {
-                      handleChange(e);
-                    }}
-                  />
-                </li>
-                <li className="grid m-1">
-                  <label htmlFor="Address">Address</label>
-                  <input
-                    type="text"
-                    name="address"
-                    id=""
-                    placeholder="Enter your Address"
-                    className="border-teal-600 border-b-2 h-8 focus:border-b-2 focus:shadow-[0.2rem_0.3rem_0.4rem_0.1rem] focus:shadow-teal-200 outline-none"
-                    onChange={(e) => {
-                      handleChange(e);
-                    }}
-                  />
-                </li>
-                <li className="grid m-1">
-                  <label htmlFor="images">Image</label>
-                  <input
-                    type="file"
-                    name="image"
-                    id=""
-                    placeholder="Enter your images"
-                    className=""
-                    onChange={(e) => handleFileUpload(e)}
-                  />
-                </li>
-              </ul>
+                    type="button"
+                  >
+                    <PlusOutlined />
+                    <div
+                      style={{
+                        marginTop: 8,
+                      }}
+                    >
+                      Upload
+                    </div>
+                  </button>
+                </Upload>
+              </Form.Item>
+
               <ModalFooter>
                 <Button colorScheme="blue" mr={3} onClick={onClose}>
                   Close
@@ -219,7 +219,7 @@ function CreateNew() {
                   Submit
                 </Button>
               </ModalFooter>
-            </form>
+            </Form>
           </ModalBody>
         </ModalContent>
       </Modal>
