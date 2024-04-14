@@ -72,7 +72,7 @@ export default function Reports() {
                     className="btn btn-outline btn-primary justify-normal w-20"
                     onClick={() => handleModel(id)}
                   >
-                    More...
+                    More
                   </button>
                 </div>
               </div>
