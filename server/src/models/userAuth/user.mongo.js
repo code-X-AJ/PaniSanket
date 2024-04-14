@@ -19,6 +19,10 @@ const userSchema = new mongoose.Schema({
     phone:{
         type:Number,
     },  
+    isOfficial:{
+        type:Boolean,
+        default: false
+    },  
     createdAt:{
         type:Date,
         default: Date.now

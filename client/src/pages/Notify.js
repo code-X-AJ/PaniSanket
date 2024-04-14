@@ -55,16 +55,16 @@ export default function Notify() {
     // }
   }
 
-  useEffect(() => {
-    async function fetchReports() {
-      const { data } = await axios.get(allNotify);
-      console.log("axios all data........", data);
-      if (data.status) {
-        setNotification(data.notifications)
-      }
-    }
-    fetchReports();
-  }, []);
+  // useEffect(() => {
+  //   async function fetchReports() {
+  //     const { data } = await axios.get(allNotify);
+  //     console.log("axios all data........", data);
+  //     if (data.swtatus) {
+  //       setNotification(data.notifications)
+  //     }
+  //   }
+  //   fetchReports();
+  // }, []);
 
   useEffect(() => {
     console.log("notificatoins there..... ", notification);
