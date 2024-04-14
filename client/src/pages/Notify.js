@@ -8,6 +8,7 @@ import Notification from "../components/Notification";
 import { allNotify, newNotify } from '../utils/APIRoutes'
 import Navbar from '../components/Navbar-new'
 import waterBG from "../assets/BG.png";
+import CreateNewN from '../components/CreateNewN';
 
 
 export default function Notify() {
@@ -82,6 +83,7 @@ export default function Notify() {
 
 
       <Notification />
+      <CreateNewN/>
       <ToastContainer />
     </div>
 
