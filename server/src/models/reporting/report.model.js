@@ -13,7 +13,7 @@ async function createNewReport(info) {
 
 async function fetchAllReports() {
     try {
-        const reports = await reportSchema.find();
+        const reports = await reportSchema.find().sort({createdAt:-1});
         if (reports.length==0) {
             return { msg: "No reports found", status: false }
         }
