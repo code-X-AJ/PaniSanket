@@ -10,26 +10,19 @@ const date = "From: 2024-04-14 To: 2024-04-15"
 const getItems = (panelStyle) => [
     {
         key: '1',
-        label: <h1 className='text-xl'>{Title}</h1>,
-        children: <div className='text-xl'>
-            <div className='font-bold flex justify-end' >
-                <h1 className='mx-1'>
-                    Timeline:
-                </h1>
-                {Timeline}
-            </div>
+        label: <div><h1 className='font-bold text-xl font-[sans-serif]'>{Title}</h1><div className='text-base font-[cursive]'>{Timeline}</div></div>,
+        children: <div className='text-xl font-[cursive]'>
             <p>
                 {Description}
             </p>
-            <div className='font-bold' htmlFor="">
-                <h1>
-                Address:
-                </h1> 
+            <div className='mt-8' htmlFor="">
+                <h1 className='font-bold'>
+                    Areas Affected:
+                </h1>
                 {location}
-                </div>
-            <div className='flex justify-end'>
-                {date}
+                <h1 className='float-right'>{date}</h1>
             </div>
+            
         </div>,
         style: panelStyle,
     },
