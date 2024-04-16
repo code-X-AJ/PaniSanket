@@ -2,78 +2,49 @@ import React from 'react';
 import { Table } from 'antd';
 const columns = [
     {
-        title: 'Name',
-        dataIndex: 'name',
-        filters: [
-            {
-                text: 'Joe',
-                value: 'Joe',
-            },
-            {
-                text: 'Category 1',
-                value: 'Category 1',
-            },
-            {
-                text: 'Category 2',
-                value: 'Category 2',
-            },
-        ],
-        filterMode: 'tree',
-        filterSearch: true,
-        onFilter: (value, record) => record.name.startsWith(value),
-        width: '30%',
+        title: 'Issue',
+        dataIndex: 'issue',
+        width: '20%',
     },
     {
-        title: 'Age',
-        dataIndex: 'age',
-        sorter: (a, b) => a.age - b.age,
+        title: 'Description',
+        dataIndex: 'description',
+        width:'50%',
     },
     {
         title: 'Address',
         dataIndex: 'address',
-        filters: [
-            {
-                text: 'London',
-                value: 'London',
-            },
-            {
-                text: 'New York',
-                value: 'New York',
-            },
-        ],
-        onFilter: (value, record) => record.address.startsWith(value),
-        filterSearch: true,
-        width: '40%',
+        width: '30%',
     },
 ];
 const data = [
     {
         key: '1',
-        name: 'shubham',
-        age: 32,
-        address: 'New York No. 1 Lake Park',
+        issue: 'puddle in our area',
+        description: 'There is a puddle in our locality...',
+        address: '#582/4',
     },
     {
         key: '2',
-        name: 'amit',
-        age: 42,
-        address: 'London No. 1 Lake Park',
+        issue: 'tap leakage 1',
+        description: 'there is water pipe leakage...',
+        address: 'sector 18',
     },
     {
         key: '3',
-        name: 'varun',
-        age: 32,
-        address: 'Sydney No. 1 Lake Park',
+        issue: 'tap leakage',
+        description: 'there is tap leakage problem in the central sector park...',
+        address: 'sector 42 park',
     },
     {
         key: '4',
-        name: 'arjun',
-        age: 32,
-        address: 'London No. 2 Lake Park',
+        issue: 'pipe burst 1',
+        description: 'central park water pipe burst',
+        address: 'react sector 18',
     },
 ];
 const onChange = (pagination, filters, sorter, extra) => {
     console.log('params', pagination, filters, sorter, extra);
 };
-const MReports = () => <Table columns={columns} dataSource={data} onChange={onChange} colorBgContainer={"green"} />;
+const MReports = () => <Table columns={columns} dataSource={data} onChange={onChange} />;
 export default MReports;
