@@ -66,12 +66,6 @@ export default function Notify() {
   //   fetchReports();
   // }, []);
 
-  useEffect(() => {
-    console.log("notificatoins there..... ", notification);
-
-  }, [notification]);
-
-
   return (
     <div
       className="bg-cover bg-center h-screen bg-gradient-to-b from-blue-600 to-white"

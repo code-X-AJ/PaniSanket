@@ -14,7 +14,7 @@ import {
   useDisclosure,
   Button,
 } from "@chakra-ui/react";
-import { PlusOutlined } from '@ant-design/icons';
+import { PlusOutlined } from "@ant-design/icons";
 import {
   ButtonAnt,
   Cascader,
@@ -30,10 +30,11 @@ import {
   Switch,
   TreeSelect,
   Upload,
-} from 'antd';
+} from "antd";
 const { RangePicker } = DatePicker;
 const { TextArea } = Input;
 const normFile = (e) => {
+  console.log("normFile....", e);
   if (Array.isArray(e)) {
     return e;
   }
@@ -78,6 +79,7 @@ function CreateNew() {
   const handleFileUpload = async (e) => {
     const file = e.target.files[0];
     const base64 = await convertToBase64(file);
+    console.log("img data...", base64);
     setPostImage({ ...postImage, base64 });
   };
 
@@ -86,18 +88,16 @@ function CreateNew() {
       ...values,
       [event.target.name]: event.target.value,
     });
+    console.log("handle change......", event.target.value);
   };
 
+  useEffect(()=>{
+    console.log("values..", values); 
+  },[values])
+  
   const handleValidation = () => {
     const { title, description, city, address } = values;
     console.log("handle validdation......", title, description, city, address);
-    // if (title === "" || description === "" || city === "" || address === "") {
-    //   toast.error(
-    //     "invalid data",
-    //     toastOptions
-    //   );
-    //   return false;
-    // }
 
     if (title.length <= 5 || title.length > 20) {
       toast.error(
@@ -162,7 +162,6 @@ function CreateNew() {
           <h1 className="text-center text-5xl m-4 font-bold">Report</h1>
           <ModalCloseButton />
           <ModalBody>
-
             <Form
               labelCol={{
                 span: 4,
@@ -175,27 +174,55 @@ function CreateNew() {
                 maxWidth: 600,
               }}
               className="flex flex-col ml-16"
+              onSubmitCapture={(e) => {
+                handleSubmit(e);
+              }}
             >
-
               <Form.Item label="Title">
-                <Input />
+                <Input
+                name="title"
+                  onChange={(e) => {
+                    handleChange(e);
+                  }}
+                />
               </Form.Item>
               <Form.Item label="City">
-                <Input />
+                <Input
+                name="city"
+                  onChange={(e) => {
+                    handleChange(e);
+                  }}
+                />
               </Form.Item>
               <Form.Item label="Address">
-                <Input />
+                <Input
+                name="address"
+                  onChange={(e) => {
+                    handleChange(e);
+                  }}
+                />
               </Form.Item>
               <Form.Item label="Description">
-                <TextArea rows={2} />
+                <TextArea
+                name="description"
+
+                  rows={2}
+                  onChange={(e) => {
+                    handleChange(e);
+                  }}
+                />
               </Form.Item>
 
-              <Form.Item label="Image" valuePropName="fileList" getValueFromEvent={normFile}>
-                <Upload action="/upload.do" listType="picture-card">
+              <Form.Item
+                label="Image"
+                valuePropName="fileList"
+                getValueFromEvent={normFile}
+              >
+                {/* <Upload name="image" listType="picture-card" >
                   <button
                     style={{
                       border: 0,
-                      background: 'none',
+                      background: "none",
                     }}
                     type="button"
                   >
@@ -208,7 +235,16 @@ function CreateNew() {
                       Upload
                     </div>
                   </button>
-                </Upload>
+                </Upload> */}
+                <input
+                  type="file"
+                  lable="Image"
+                  name="myFile"
+                  id='file-upload'
+                  accept='.jpeg, .png, .jpg'
+                  onChange={(e) => handleFileUpload(e)}
+                />
+
               </Form.Item>
 
               <ModalFooter>

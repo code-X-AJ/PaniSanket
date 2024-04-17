@@ -78,20 +78,20 @@ const App = () => {
                     >
 
                         <Form.Item label="Title">
-                            <Input />
+                            <Input name='title' />
                         </Form.Item>
                         <Form.Item label="City">
-                            <Input />
+                            <Input name='city' />
                         </Form.Item>
                         <Form.Item label="Address">
-                            <Input />
+                            <Input name='address' />
                         </Form.Item>
                         <Form.Item label="Description">
-                            <TextArea rows={2} />
+                            <TextArea name='description' rows={2} />
                         </Form.Item>
 
                         <Form.Item label="Timeline">
-                            <RangePicker />
+                            <RangePicker name='time' />
                         </Form.Item>
 
 
