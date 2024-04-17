@@ -87,24 +87,25 @@ export default function Reports() {
         <Modal isOpen={isOpen} onClose={onClose} size={"xl"}>
           <ModalOverlay bg="blackAlpha.300" backdropFilter="blur(8px)" />
           <ModalContent>
+            <ModalCloseButton />
             <div className="m-8">
-              <h1 className="text-5xl mb-2 ml-6 font-bold">
-                {reports[index].title}
-              </h1>
-              <ModalCloseButton />
+
               <ModalBody>
-                <img src={reports[index].image} alt="" className="rounded-sm" />
+                <img src={reports[index].image} alt="" className="rounded-md" />
+                <h1 className="text-4xl font-bold  my-4">
+                  {reports[index].title}
+                </h1>
                 <p className="text-xl text-justify">
                   {reports[index].description}
                 </p>
               </ModalBody>
+
               <div className="flex justify-center m-2">
                 <div className="bg-zinc-900 w-10/12 h-0.5 rounded"></div>
               </div>
+
               <ModalFooter>
-                <label htmlFor="address" className="font-bold text-xl mx-2">
-                  Location:{" "}
-                </label>
+                <label htmlFor="address" className="font-bold text-xl mx-2">Location: </label>
                 <h3 className="text-xl">{reports[index].address}</h3>
               </ModalFooter>
             </div>
@@ -114,10 +115,3 @@ export default function Reports() {
     </>
   );
 }
-// <Report
-//     key={id}
-//     title={report.title}
-//     description={report.description}
-//     image={report.image}
-//     address={report.address}
-// />

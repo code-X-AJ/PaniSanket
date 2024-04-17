@@ -11,7 +11,7 @@ function Signup() {
   
   useEffect(()=>{
     if(localStorage.getItem('PaniSanket-user')){
-      navigate("/home")
+      navigate("/")
     }
   })
   

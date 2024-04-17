@@ -50,7 +50,7 @@ export default function Notify() {
     }
     if (data.status === true) {
       toast.success(data.msg, toastOptions);
-      navigate("/Notify");
+      navigate("/notify");
     }
     // }
   }
@@ -75,6 +75,7 @@ export default function Notify() {
         <Navbar />
       </div>
 
+      <h1 className="text-center text-5xl m-4 font-bold">Water Cut Notifications</h1>
 
       <Notification />
       <CreateNewN/>

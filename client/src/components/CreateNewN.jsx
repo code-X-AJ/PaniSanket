@@ -20,6 +20,7 @@ import {
 } from 'antd';
 
 import { PlusOutlined } from '@ant-design/icons';
+import { TimePicker } from 'antd';
 const{ RangePicker } = DatePicker;
 const { TextArea } = Input;
 
@@ -61,7 +62,7 @@ const App = () => {
                     </Button>,
                 ]}
             >
-                <h1 className="text-center text-5xl m-4 font-bold">Report</h1>
+                <h1 className="text-center text-5xl m-4 font-bold">Notify Others</h1>
                 <div>
                     <Form
                         labelCol={{
@@ -94,6 +95,12 @@ const App = () => {
                             <RangePicker name='time' />
                         </Form.Item>
 
+                        <Form.Item label="Timeline">
+                            <RangePicker />
+                        </Form.Item>
+                        <Form.Item label="Timeline">
+                            <TimePicker.RangePicker />
+                        </Form.Item>
 
                     </Form>
                 </div>
