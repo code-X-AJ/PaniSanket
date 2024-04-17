@@ -5,7 +5,7 @@ function Footer() {
   return (
     <div>
       <div
-        className="bg-contain bg-no-repeat h-[34vh] flex justify-between items-center"
+        className="h-[30vh] flex justify-between items-center"
         style={{ backgroundImage: `url(${footer})` }}
       >
         <div className="text-white uppercase mx-[5%]">
