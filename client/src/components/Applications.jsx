@@ -1,7 +1,7 @@
 import React from "react";
-import kaori1 from "../assets/Vector1.png";
-import kaori2 from "../assets/Vector2.png";
-import kaori3 from "../assets/Vector3.png";
+// import kaori1 from "../assets/Vector1.png";
+// import kaori2 from "../assets/Vector2.png";
+// import kaori3 from "../assets/Vector3.png";
 
 function Applications() {
   return (
@@ -14,7 +14,7 @@ function Applications() {
           <div className="flex justify-center items-center">
             <div className="border-[10px] border-blue-200 rounded-[100%] p-2">
               <img
-                src={kaori1}
+                // src={kaori1}
                 className="p-2 rounded-[100%] w-[105px]"
                 alt=""
               />
@@ -34,7 +34,7 @@ function Applications() {
           <div className="flex justify-center items-center">
             <div className="border-[10px] border-blue-200 rounded-[100%] p-3 ">
               <img
-                src={kaori2}
+                // src={kaori2}
                 className="rounded-[100%] w-[93px]"
                 alt=""
               />
@@ -55,7 +55,7 @@ function Applications() {
           <div className="flex justify-center items-center">
             <div className="border-[10px] border-blue-200 rounded-[100%] p-3">
               <img
-                src={kaori3}
+                // src={kaori3}
                 className="rounded-[100%] w-[93px]"
                 alt=""
               />
