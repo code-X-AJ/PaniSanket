@@ -17,8 +17,11 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 
+
 import image from '../assets/kaori.png'
 
+import {Form,Input} from 'antd'
+const { TextArea } = Input;
 
 export default function Report(props) {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -49,7 +52,7 @@ export default function Report(props) {
         </Stack>
       </Card>
 
-      
+
       <Modal isOpen={isOpen} onClose={onClose} size={"xl"}>
         <ModalOverlay bg='blackAlpha.300' backdropFilter='blur(8px)' />
 
@@ -64,9 +67,13 @@ export default function Report(props) {
             <div className='flex justify-center m-2'>
               <div className='bg-zinc-900 w-10/12 h-0.5 rounded'></div>
             </div>
+            <label htmlFor="address" className='font-bold text-xl mx-2'>Location: </label>
+            <h3 className='text-xl'>{props.address}</h3>
             <ModalFooter>
-              <label htmlFor="address" className='font-bold text-xl mx-2'>Location: </label>
-              <h3 className='text-xl'>{props.address}</h3>
+              <h1>Response:</h1>
+              <Form.Item label="Description">
+                            <TextArea name='description' rows={2} />
+                        </Form.Item>
             </ModalFooter>
           </div>
         </ModalContent>

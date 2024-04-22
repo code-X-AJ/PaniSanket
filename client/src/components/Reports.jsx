@@ -9,8 +9,12 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
+  Button,
 } from "@chakra-ui/react";
 import loading from "../assets/loading1.gif";
+
+import { Form, Input } from 'antd'
+const { TextArea } = Input;
 
 export default function Reports() {
   const [reports, setReports] = useState([]);
@@ -52,12 +56,34 @@ export default function Reports() {
     <>
       <h1 className="text-center text-white text-6xl font-semibold">Reports</h1>
 
+
+      <div className='flex my-8 mx-16 justify-between w-[40%]'>
+        <h1 className={`text-2xl text-white relative hover:cursor-pointer hover:text-slate-50`} >
+          All
+          <span className="absolute bottom-0 left-0 w-full h-1 bg-transparent border-b border-white transition-all duration-300 opacity-0"></span>
+        </h1>
+        <span className="w-1 h-6 mt-1 bg-white rounded-full"></span>
+        <h1 className={`text-2xl text-white relative hover:cursor-pointer hover:text-slate-50 `} >
+          My Reports
+          <span className="absolute bottom-0 left-0 w-full h-1 bg-transparent border-b border-white transition-all duration-300 opacity-0"></span>
+        </h1>
+        <span className="w-1 h-6 mt-1 bg-white rounded-full"></span>
+        <h1 className={`text-2xl text-white relative hover:cursor-pointer hover:text-slate-50 `} >
+          Progress
+          <span className="absolute bottom-0 left-0 w-full h-1 bg-transparent border-b border-white transition-all duration-300 opacity-0"></span>
+        </h1>
+        <span className="w-1 h-6 mt-1 bg-white rounded-full"></span>
+        <h1 className={`text-2xl text-white relative hover:cursor-pointer hover:text-slate-50 `} >
+          Finished
+          <span className="absolute bottom-0 left-0 w-full h-1 bg-transparent border-b border-white transition-all duration-300 opacity-0"></span>
+        </h1>
+      </div>
       <div className="flex justify-center">
         {isLoaded ? (
           <div className="flex flex-wrap justify-center gap-5 my-5 ">
             {reports.map((report, id) => (
               <div className="card w-72 bg-base-100 shadow-xl" key={id}>
-                <figure>
+                <figure className="h-[20vh]">
                   <img src={report.image} alt="Shoes" />
                 </figure>
                 <div className="card-body">
@@ -91,7 +117,7 @@ export default function Reports() {
             <div className="m-8">
 
               <ModalBody>
-                <img src={reports[index].image} alt="" className="rounded-md" />
+                  <img src={reports[index].image} alt="" className="rounded-md h-[30vh] w-full"  />
                 <h1 className="text-4xl font-bold  my-4">
                   {reports[index].title}
                 </h1>
@@ -103,11 +129,17 @@ export default function Reports() {
               <div className="flex justify-center m-2">
                 <div className="bg-zinc-900 w-10/12 h-0.5 rounded"></div>
               </div>
-
               <ModalFooter>
-                <label htmlFor="address" className="font-bold text-xl mx-2">Location: </label>
-                <h3 className="text-xl">{reports[index].address}</h3>
+                <label htmlFor="address" className='font-bold text-xl mx-2'>Location: </label>
+                <h3 className='text-xl'>{reports[index].address}</h3>
               </ModalFooter>
+              <h1 className="my-2 text-xl font-bold">Respond:</h1>
+              <Form.Item>
+                <TextArea name='description' rows={2} />
+              </Form.Item>
+              <Button mr={3} colorScheme="teal" type="submit">
+                Attend
+              </Button>
             </div>
           </ModalContent>
         </Modal>

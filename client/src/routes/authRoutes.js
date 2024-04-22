@@ -5,6 +5,7 @@ import Login from "../pages/Login"
 import Reporting from "../pages/Reporting"
 import Notify from '../pages/Notify'
 import MonthlyReport from '../pages/MonthlyReport'
+import MyReports from '../pages/MyReports'
 
 const authRoutes = [
     {
@@ -33,7 +34,12 @@ const authRoutes = [
     },
     {
         name: <MonthlyReport/>,
-        path: 'monthlyreport'    }
+        path: 'monthlyreport'    
+    },
+    {
+        name: <MyReports/>,
+        path: 'myReports'    
+    }
 ]
 
 export default authRoutes
