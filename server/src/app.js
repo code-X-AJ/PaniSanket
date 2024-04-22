@@ -9,6 +9,7 @@ const session = require("express-session")
 const authRouter = require('./routes/userAuth/userAuth.route')
 const notifyRouter = require('./routes/notification/notification.route')
 const reportRouter = require('./routes/reporting/report.route')
+const monthlyReport = require('./routes/monthlyReport/monthlyReport.route')
 const { initGooglePassport } = require("./services/passport.google")
 
 app.use(cors());
@@ -29,6 +30,7 @@ app.use(express.json({ limit: '50mb' }));
 app.use('/api/auth/', authRouter)
 app.use('/api/report/', reportRouter)
 app.use('/api/notify/', notifyRouter)
+app.use('/api/monthly/', monthlyReport)
 
 
 module.exports = app

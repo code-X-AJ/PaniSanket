@@ -30,7 +30,6 @@ const App = () => {
   useEffect(() => {
     async function fetchNotifications() {
       const { data } = await axios.get(allNotify);
-      console.log("Datais......", data);
       if (data.status) {
         setNotify(data.notifications);
         setIsLoaded(true);
@@ -39,9 +38,9 @@ const App = () => {
     fetchNotifications();
   }, []);
 
-  useEffect(()=>{
-    console.log("notificatiokns ........", notify);
-  },[notify])
+  // useEffect(()=>{
+  //   console.log("notificatiokns ........", notify);
+  // },[notify])
 
   // const getItems = (panelStyle) => {
   //   return [

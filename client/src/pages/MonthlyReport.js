@@ -1,10 +1,54 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar-new';
 import MReports from '../components/MReports';
 import MNotifications from '../components/MNotifications';
+import { monthlyData } from '../utils/APIRoutes';
+import 'react-toastify/dist/ReactToastify.css';
+import { Slide, ToastContainer, toast } from "react-toastify";
+import axios from "axios";
+
 
 export default function MonthlyReport() {
+  
   const [showReports, setShowReports] = useState(true);
+  const [monthData, setMonthData] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+
+  const toastOptions = {
+    theme: "light",
+    position: "bottom-right",
+    pauseOnHover: true,
+    autoClose: 5000,
+    draggable: true,
+    transition: Slide,
+  };
+
+
+
+  useEffect(() => {
+    async function fetchMonthlyData() {
+      const { data } = await axios.get(monthlyData);
+      if (data.status) {
+        setMonthData(data.data);
+        setIsLoaded(true)
+      }else{
+        console.error(data.msg);
+        
+        toast.error(
+          "Something went wrong",
+          toastOptions
+        );
+  
+      }
+    }
+    fetchMonthlyData();
+  }, []);
+
+  useEffect(()=>{
+    console.log("thisis month data,.............", monthData);
+  },[monthData])
+  
 
   return (
     <div className="bg-cover bg-center h-screen bg-gradient-to-b from-blue-600 to-white">
@@ -32,6 +76,7 @@ export default function MonthlyReport() {
 
         {showReports ? <MReports /> : <MNotifications />}
       </div>
+      <ToastContainer/>
     </div>
   );
 }

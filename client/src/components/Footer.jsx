@@ -19,7 +19,7 @@ function Footer() {
           <h2 className="text-6xl uppercase">
             PaniSanket
           </h2>
-          <h6 className="text-center">water reporting solutions</h6>
+          <h6 className="text-center">Water Reporting Solutions</h6>
         </div>
         
       </div>

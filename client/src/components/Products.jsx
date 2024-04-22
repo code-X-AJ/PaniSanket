@@ -2,51 +2,42 @@ import React from "react";
 import coli from "../assets/coliminder.png";
 import product2 from "../assets/product2.png";
 import product3 from "../assets/product3.png";
+import Nproduct1 from "../assets/services/varun1.jpg";
+// import Nproduct2 from "../assets/services/product2.png";
+// import Nproduct3 from "../assets/services/product3.png";
 
 function Products() {
   return (
     <div>
-      <div className="flex">
+      <div className="flex items-center">
         <div className="w-[40%] pl-[6%] pt-[3%] ">
           <h2 className="uppercase text-blue-500 font-bold text-lg mb-3">
             Services
           </h2>
 
           <h3 className="text-4xl font-extrabold text- tracking-wider mb-10 text-sky-800">
-            ColiMinder
+            Monthly Report
           </h3>
           <p className="">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-            suscipit, provident explicabo natus debitis pariatur reprehenderit
-            possimus cumque tempore voluptate esse aspernatur quidem? Veritatis
-            repudiandae autem laudantium mollitia sint expedita praesentium.
-          </p>
+          Empower yourself with data-driven decision-making through our monthly reports. Understand the environmental ramifications of your water usage, foster community awareness, and drive positive change towards sustainable water management practices.          </p>
           <p className="my-4">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim
-            excepturi asperiores a cupiditate reiciendis voluptas optio incidunt
-            in. Excepturi necessitatibus perferendis doloribus iusto vitae,
-            distinctio molestiae. Corrupti nam veniam adipisci.
+          Our monthly report feature offers users valuable insights into water consumption habits and environmental impact. Gain understanding of usage patterns, optimize resource allocation, and contribute to sustainable water management efforts through transparent reporting and continuous improvement.
           </p>
           <ul className="tracking-wide list-inside list-disc flex flex-col gap-2">
             <li>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-              cumque mollitia eveniet. Minima, odit sapiente!
+            Gain valuable insights into your water usage patterns with detailed analytics and consumption trends.
             </li>
             <li>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-              cumque mollitia eveniet. Minima, odit sapiente!
+            Understand the environmental impact of your water consumption and contribute to sustainability efforts.
             </li>
             <li>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-              cumque mollitia eveniet. Minima, odit sapiente!
+            Optimize resource allocation based on monthly consumption data to ensure efficient water management.
             </li>
             <li>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-              cumque mollitia eveniet. Minima, odit sapiente!
+            Raise awareness about water conservation and encourage community participation through transparent reporting.
             </li>
             <li>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-              cumque mollitia eveniet. Minima, odit sapiente!
+            Use monthly reports as a tool for continuous improvement in water usage habits and conservation practices.
             </li>
           </ul>
 
@@ -58,8 +49,8 @@ function Products() {
             Add-on modules
           </h2>
         </div>
-        <div className="">
-          <img src={coli} alt="" />
+        <div className="w-[50%] flex justify-center items-start">
+          <img src={Nproduct1} className="w-[350px] " alt="" />
         </div>
       </div>
 
@@ -70,7 +61,7 @@ function Products() {
 
         <div className="w-[80%] mt-2">
           <h3 className="text-3xl font-extrabold text- tracking-normal mb-3 text-sky-800">
-            Reporting (Actionable Insights)
+            Actionable Insights
           </h3>
           <p className="">
             Unlock the power of data with our reporting feature. Easily report
@@ -90,7 +81,7 @@ function Products() {
       <div className="flex gap-10 justify-center items-center ml-[6%] py-6 ">
         <div className="w-[50%]">
           <h3 className="text-3xl font-extrabold text- tracking-normal mb-3 text-sky-800">
-            Water Cut Notification (Stay Informed)
+            Stay Informed
           </h3>
 
           <p className="">

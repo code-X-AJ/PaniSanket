@@ -5,7 +5,7 @@ async function createNewReport(info) {
         var { userId, title, description, city, address, image } = info;
         let report = await reportSchema.create({ userId, title, description, city, address, image })
         delete report.image;
-        return { msg: "report submited successfully", status: true, report }
+        return { msg: " submited successfully", status: true, report }
     } catch (error) {
         console.error(error);
     }

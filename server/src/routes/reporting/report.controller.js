@@ -1,4 +1,4 @@
-const { createNewReport, fetchAllReports } = require('../../models/reporting/report.model')
+const { createNewReport, fetchAllReports } = require('../../models/reporting/report.model') 
 
 async function httpPostNewReport(req, res) {
     console.log("new report");

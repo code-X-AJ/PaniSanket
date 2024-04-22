@@ -4,5 +4,6 @@ export const loginRoute = `${host}/api/auth/login`
 export const googleRoute = `${host}/api/auth/google`
 export const newReport = `${host}/api/report/newReport`
 export const allReports = `${host}/api/report/allReports`
-export const newNotify = `${host}/api/report/newNotify`
+export const newNotify = `${host}/api/notify/newNotify`
 export const allNotify = `${host}/api/notify/allNotify`
+export const monthlyData = `${host}/api/monthly/monthlyData`

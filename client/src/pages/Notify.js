@@ -5,14 +5,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { useNavigate } from "react-router-dom";
 import Notification from "../components/Notification";
-import { allNotify, newNotify } from '../utils/APIRoutes'
 import Navbar from '../components/Navbar-new'
-import waterBG from "../assets/BG.png";
 import CreateNewN from '../components/CreateNewN';
 
 
 export default function Notify() {
   const navigate = useNavigate();
+  const [official, setOfficial] = useState(false) || false;
 
 
   const toastOptions = {
@@ -24,47 +23,15 @@ export default function Notify() {
     transition: Slide,
   };
 
+
   useEffect(() => {
     if (!localStorage.getItem('PaniSanket-user')) {
       navigate("/login")
+    }else{
+      const isOfficial = JSON.parse(localStorage.getItem("PaniSanket-user")).isOfficial;
+      if(isOfficial) setOfficial(true);
     }
   })
-
-  const [notification, setNotification] = useState(null);
-  const [values, setValues] = useState({
-    userId: "",
-    title: "",
-    description: "",
-    address: "",
-    date: "",
-    time: ""
-  });
-
-  const handleReportSubmit = async (event) => {
-    event.preventDefault();
-    // if (handleValidation()) {
-    const { userId, title, description, address, date, time } = notification;
-    const { data } = await axios.post(newNotify, { userId, title, description, address, date, time });
-    if (data.status === false) {
-      toast.error(data.msg, toastOptions);
-    }
-    if (data.status === true) {
-      toast.success(data.msg, toastOptions);
-      navigate("/notify");
-    }
-    // }
-  }
-
-  // useEffect(() => {
-  //   async function fetchReports() {
-  //     const { data } = await axios.get(allNotify);
-  //     console.log("axios all data........", data);
-  //     if (data.swtatus) {
-  //       setNotification(data.notifications)
-  //     }
-  //   }
-  //   fetchReports();
-  // }, []);
 
   return (
     <div
@@ -75,10 +42,10 @@ export default function Notify() {
         <Navbar />
       </div>
 
-      <h1 className="text-center text-5xl m-4 font-bold">Water Cut Notifications</h1>
+      <h1 className="text-center text-5xl m-4 font-bold text-white">Water Cut Notifications</h1>
 
       <Notification />
-      <CreateNewN/>
+      {official && <CreateNewN/>}
       <ToastContainer />
     </div>
 
