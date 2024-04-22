@@ -12,7 +12,7 @@ function Navbar() {
 
         <div className="flex flex-col justify-end items-end">
           <div className="w-[900px] bg-slate-700 mt-4 pb-[.5px] mb-2"></div>
-          <ul className="flex text-white text-sm gap-4 uppercase font-semibold tracking-wide">
+          <ul className="flex text-white text-sm gap-6 uppercase font-normal tracking-wide">
             <li className=""><a href="/">Home</a></li>
             <li className=""><a href="/report">Reports</a></li>
             <li className=""><a href="/notify">Water Cuts</a></li>

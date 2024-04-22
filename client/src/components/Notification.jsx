@@ -50,11 +50,11 @@ const App = () => {
   //       label: (
   //         <div>
   //           <h1 className="font-bold text-xl font-[sans-serif]">{Title}</h1>
-  //           <div className="text-base font-[cursive]">{Timeline}</div>
+  //           <div className="text-base font-[sans-serif]">{Timeline}</div>
   //         </div>
   //       ),
   //       children: (
-  //         <div className="text-xl font-[cursive]">
+  //         <div className="text-xl font-[sans-serif]">
   //           <p>{Description}</p>
   //           <div className="mt-8" htmlFor="">
   //             <h1 className="font-bold">Areas Affected:</h1>
@@ -110,16 +110,27 @@ const App = () => {
       label: (
         <div>
           <h1 className="font-bold text-xl font-[sans-serif]">{noti.title}</h1>
-          <div className="text-base font-[cursive]">{noti.time}</div>
+          
         </div>
       ),
       children: (
-        <div className="text-xl font-[cursive]">
+        <div className="text-xl flex flex-col font-[sans-serif]">
+          <div className="container flex w-[34rem] justify-between">
+          <h1 className="font-bold">Details:</h1>
           <p>{noti.description}</p>
-          <div className="mt-8" htmlFor="">
+          </div>
+          <div className="container flex w-[34rem] justify-between">
             <h1 className="font-bold">Areas Affected:</h1>
             {noti.address}
-            <h1 className="float-right">{noti.date}</h1>
+            
+          </div>
+          <div className="container flex w-[34rem] justify-between">
+          <h1 className="font-bold">Date:</h1>
+            <h1 className="">{noti.date}</h1>
+          </div>
+          <div className="container flex w-[34rem] justify-between">
+          <h1 className="font-bold">Timings:</h1>
+          <div className="">{noti.time}</div>
           </div>
         </div>
       ),
