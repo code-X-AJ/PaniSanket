@@ -6,7 +6,7 @@ import { Slide, ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 import Navbar from '../components/Navbar-new'
-import Reports from '../components/Reports'
+import Reports from '../components/Reports/Reports'
 import CreateNew from '../components/CreateNew'
 import { allReports, newReport } from '../utils/APIRoutes'
 
@@ -54,8 +54,6 @@ export default function Reporting() {
             {/* to-blue-500 */}
             <div
                 className="bg-cover bg-center h-screen bg-gradient-to-b from-blue-600 to-white "
-            // className="bg-cover bg-center h-screen "
-            // style={{ backgroundImage: `url(${waterBG})` }}
             >
                 <div className="mx-[10%]">
                     <Navbar />

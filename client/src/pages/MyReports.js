@@ -6,11 +6,10 @@ import { Slide, ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 import Navbar from '../components/Navbar-new'
-import Reports from '../components/Reports'
+import Reports from '../components/Reports/Reports'
 import CreateNew from '../components/CreateNew'
 import { allReports, newReport } from '../utils/APIRoutes'
 import loading from "../assets/loading1.gif";
-
 
 import {
     Modal,

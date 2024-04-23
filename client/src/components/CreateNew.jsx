@@ -90,12 +90,11 @@ function CreateNew() {
       ...values,
       [event.target.name]: event.target.value,
     });
-    console.log("handle change......", event.target.value);
   };
 
-  useEffect(()=>{
-    console.log("values..", values); 
-  },[values])
+  // useEffect(()=>{
+  //   console.log("values..", values); 
+  // },[values])
   
   const handleValidation = () => {
     const { title, description, city, address } = values;

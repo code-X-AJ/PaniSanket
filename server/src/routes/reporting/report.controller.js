@@ -1,4 +1,4 @@
-const { createNewReport, fetchAllReports } = require('../../models/reporting/report.model') 
+const { createNewReport, fetchAllReports, saveResponse, fetchResponse, resolveReport } = require('../../models/reporting/report.model') 
 
 async function httpPostNewReport(req, res) {
     console.log("new report");
@@ -12,6 +12,46 @@ async function httpPostNewReport(req, res) {
         return res.status(400).json({ "err": err.message })
     }
 }
+
+async function httpPostNewResponse(req, res) {
+    console.log("new response");
+    try {
+        const info = req.body
+        const result = await saveResponse(info);
+        return res.json(result)
+
+    } catch (err) {
+        console.log(err.message)
+        return res.status(400).json({ "err": err.message })
+    }
+}
+
+async function httpPostFetchResponses(req, res) {
+    console.log("fetch user responses");
+    try {
+        const info = req.body
+        const result = await fetchResponse(info);
+        return res.json(result)
+
+    } catch (err) {
+        console.log(err.message)
+        return res.status(400).json({ "err": err.message })
+    }
+}
+
+async function httpPostResolveReport(req, res) {
+    console.log("Resolve Report");
+    try {
+        const info = req.body
+        const result = await resolveReport(info);
+        return res.json(result)
+
+    } catch (err) {
+        console.log(err.message)
+        return res.status(400).json({ "err": err.message })
+    }
+}
+
 
 async function httpGetAllReports(req, res) {
     console.log("all reports");
@@ -28,4 +68,7 @@ async function httpGetAllReports(req, res) {
 module.exports = {
     httpPostNewReport,
     httpGetAllReports,
+    httpPostNewResponse,
+    httpPostFetchResponses,
+    httpPostResolveReport,
 }

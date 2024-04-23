@@ -32,6 +32,21 @@ const reportSchema = new mongoose.Schema({
         default: "",
         required: true
     },
+    isPending: {
+        type: Boolean,
+        default: true,
+        required: true
+    },
+    isProgress: {
+        type: Boolean,
+        default: false,
+        required: true
+    },
+    isResolved: {
+        type: Boolean,
+        default: false,
+        required: true
+    },
 
     createdAt: {
         type: Date,

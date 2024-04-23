@@ -2,6 +2,7 @@ import { CaretRightOutlined } from "@ant-design/icons";
 import React, { useEffect, useState } from "react";
 import { Collapse, theme } from "antd";
 import axios from "axios";
+import { Slide, toast } from "react-toastify";
 import { newNotify, allNotify } from "../utils/APIRoutes";
 
 
@@ -10,6 +11,16 @@ const App = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const { token } = theme.useToken();
+  const toastOptions = {
+    theme: "light",
+    position: "bottom-right",
+    pauseOnHover: true,
+    autoClose: 5000,
+    draggable: true,
+    transition: Slide,
+  };
+
+  
   const panelStyle = {
     marginBottom: 24,
     background: "#F4F4F4",
@@ -29,10 +40,16 @@ const App = () => {
 
   useEffect(() => {
     async function fetchNotifications() {
+      
       const { data } = await axios.get(allNotify);
+      console.log("hey ..........", data);
+
       if (data.status) {
         setNotify(data.notifications);
         setIsLoaded(true);
+      }
+      else{
+        toast.warning("No notifications", toastOptions)
       }
     }
     fetchNotifications();
@@ -140,6 +157,10 @@ const App = () => {
   
   return (
     <div className="mt-8 flex justify-center">
+      {
+        (notify.length>0)?
+        
+      
       <Collapse
         bordered={false}
         defaultActiveKey={["1"]}
@@ -151,7 +172,10 @@ const App = () => {
           width: "70rem",
         }}
         items={getItems(panelStyle)}
-      />
+
+        />
+        : <h3 className="text-4xl font-semibold text-slate-600">No Notification present!!!j</h3>
+      }
     </div>
   );
 };
