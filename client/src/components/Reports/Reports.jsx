@@ -22,6 +22,7 @@ import MyReport from "./MyReport";
 import { Form, Input } from "antd";
 import { Slide, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Details from './Details'
 
 export default function Reports() {
   const navigate = useNavigate();
@@ -77,7 +78,7 @@ export default function Reports() {
     }
     fetchReports();
   }, [updateFlag]);
-  
+
   useEffect(() => {
     async function fetchReports() {
       const { data } = await axios.get(allReports);
@@ -95,8 +96,8 @@ export default function Reports() {
     console.log("messages useeffect", messages.response);
   }, [messages]);
 
-  
-  const handleModel = async(index) => {
+
+  const handleModel = async (index) => {
     const reportId = reports[index]._id;
     const userId = JSON.parse(localStorage.getItem("PaniSanket-user"))._id;
     console.log("reportid.....", reportId);
@@ -104,10 +105,10 @@ export default function Reports() {
       report: reportId
     })
 
-    if(userId == reports[index].userId){
+    if (userId == reports[index].userId) {
       setIsReportOwner(true);
     }
-    
+
     console.log("incoming data issssss......", data.response);
     setIsMsgLoaded(true)
     setMessages(data);
@@ -171,9 +172,9 @@ export default function Reports() {
     <>
       <h1 className="text-center text-white text-6xl font-semibold">Reports</h1>
 
-      <div className="flex my-8 mx-16 justify-between w-[40%]">
+      <div className={`flex my-8 mx-16 justify-between ${official ? 'w-[40%]' : 'w-[15%]'}`}>
         <h1
-          className={`text-2xl text-white relative hover:cursor-pointer hover:text-slate-50`}
+          className={`text-2xl text-white relative hover:cursor-pointer hover:text-slate-50  ${showAllReports ? 'font-semibold' : ''}`}
           onClick={() => {
             setShowProgressReports(false);
             setShowAllReports(true);
@@ -182,14 +183,16 @@ export default function Reports() {
           }}
         >
           All
-          <span className="absolute bottom-0 left-0 w-full h-1 bg-transparent border-b border-white transition-all duration-300 opacity-0"></span>
+          {showAllReports && (
+            <span className={`absolute top-8 bottom-0 left-0 w-full h-1 bg-white rounded-full`}></span>
+          )}
         </h1>
 
         {!official && (
           <>
             <span className="w-1 h-6 mt-1 bg-white rounded-full"></span>
             <h1
-              className={`text-2xl text-white relative hover:cursor-pointer hover:text-slate-50 `}
+              className={`text-2xl text-white relative hover:cursor-pointer hover:text-slate-50 ${showMyReports ? 'font-semibold' : ''}`}
               onClick={() => {
                 setShowProgressReports(false);
                 setShowAllReports(false);
@@ -198,7 +201,9 @@ export default function Reports() {
               }}
             >
               My Reports
-              <span className="absolute bottom-0 left-0 w-full h-1 bg-transparent border-b border-white transition-all duration-300 opacity-0"></span>
+              {showMyReports && (
+                <span className={`absolute top-8 bottom-0 left-0 w-full h-1 bg-white rounded-full`}></span>
+              )}
             </h1>
           </>
         )}
@@ -207,7 +212,7 @@ export default function Reports() {
           <>
             <span className="w-1 h-6 mt-1 bg-white rounded-full"></span>
             <h1
-              className={`text-2xl text-white relative hover:cursor-pointer hover:text-slate-50 `}
+              className={`text-2xl text-white relative hover:cursor-pointer hover:text-slate-50 ${showProgressReports ? 'font-bold' : ''}`}
               onClick={() => {
                 setShowProgressReports(true);
                 setShowAllReports(false);
@@ -216,12 +221,14 @@ export default function Reports() {
               }}
             >
               Progress
-              <span className="absolute bottom-0 left-0 w-full h-1 bg-transparent border-b border-white transition-all duration-300 opacity-0"></span>
+              {showProgressReports && (
+                <span className={`absolute top-8 bottom-0 left-0 w-full h-1 bg-white rounded-full`}></span>
+              )}
             </h1>
 
             <span className="w-1 h-6 mt-1 bg-white rounded-full"></span>
             <h1
-              className={`text-2xl text-white relative hover:cursor-pointer hover:text-slate-50 `}
+              className={`text-2xl text-white relative hover:cursor-pointer hover:text-slate-50 ${showFinshedReports ? 'font-bold' : ''}`}
               onClick={() => {
                 setShowProgressReports(false);
                 setShowAllReports(false);
@@ -230,7 +237,9 @@ export default function Reports() {
               }}
             >
               Finished
-              <span className="absolute bottom-0 left-0 w-full h-1 bg-transparent border-b border-white transition-all duration-300 opacity-0"></span>
+              {showFinshedReports && (
+                <span className={`absolute top-8 bottom-0 left-0 w-full h-1 bg-white rounded-full`}></span>
+              )}
             </h1>
           </>
         )}
@@ -242,7 +251,7 @@ export default function Reports() {
           reports={reports}
           isLoaded={isLoaded}
           handleModel={handleModel}
-          onResolve={()=>setUpdateFlag(!updateFlag)}
+          onResolve={() => setUpdateFlag(!updateFlag)}
 
         />
       )}
@@ -265,7 +274,7 @@ export default function Reports() {
           reports={reports}
           isLoaded={isLoaded}
           handleModel={handleModel}
-          onResolve={()=>setUpdateFlag(!updateFlag)}
+          onResolve={() => setUpdateFlag(!updateFlag)}
         />
       )}
 
@@ -281,32 +290,21 @@ export default function Reports() {
                   alt=""
                   className="rounded-md h-[30vh] w-full"
                 />
-                <h1 className="text-4xl font-bold  my-4">
-                  {reports[index].title}
-                </h1>
-                <p className="text-xl text-justify">
-                  {reports[index].description}
-                </p>
+                <Details issue={reports[index].title} details={reports[index].description} area={reports[index].address}/>
               </ModalBody>
 
               <div className="flex justify-center m-2">
                 <div className="bg-zinc-900 w-10/12 h-0.5 rounded"></div>
               </div>
-              <ModalFooter>
-                <label htmlFor="address" className="font-bold text-xl mx-2">
-                  Location:{" "}
-                </label>
-                <h3 className="text-xl">{reports[index].address}</h3>
-              </ModalFooter>
-              {(official || isReportOwner) &&   (
+              {(official || isReportOwner) && (
                 <div className="px-6">
-                  <hr />
+                  {/* <hr /> */}
                   <div>
                     <div className="chat chat-start">
                       <div className="chat-header my-2 font-semibold text-base">
                         Officials
                       </div>
-                      { isMsgLoaded && messages.response.map((msg, id) => (
+                      {isMsgLoaded && messages.response.map((msg, id) => (
                         <div className="chat-bubble my-1" key={id}>
                           {msg.message.text}
                         </div>
